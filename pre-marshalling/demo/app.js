@@ -52,7 +52,7 @@ const I18N = {
   }
 };
 const $ = id => document.getElementById(id);
-let lang = 'ko';
+let lang = (typeof window !== 'undefined' && window.PM_LANG === 'en') ? 'en' : 'ko';
 const T = k => I18N[lang][k];
 const data = {};      // problem id -> json or null
 let cur = null;       // {bay, stacks:[[{id,v}]], moves, initial}
