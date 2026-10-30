@@ -54,7 +54,8 @@
   .pm-offer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.1rem; margin-top: 1rem; }
   .pm-offer { border: 1px solid rgba(51,58,47,0.15); border-radius: 12px; padding: 1.3rem 1.2rem; background: #fff; }
   .pm-offer h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--color-dark); }
-  .pm-photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem; margin: 1.4rem 0 1rem; }
+  .pm-photos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem 1.6rem; margin: 1.4rem 0 1rem; }
+  @media (max-width: 680px) { .pm-photos { grid-template-columns: 1fr; } }
   .pm-photos figure { margin: 0; }
   .pm-photos img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 10px; display: block; background: rgba(51,58,47,0.06); }
   .pm-photos figcaption { margin-top: 0.6rem; font-size: 0.9rem; line-height: 1.6; color: var(--color-accent); }
@@ -93,7 +94,7 @@
     </section>
     <section class="pm-section">
       <h2>이런 현장에 적용합니다</h2>
-      <p>물건을 여러 단으로 쌓아 두고 크레인으로 꺼내는 곳이면 같은 문제가 생깁니다.</p>
+      <p>물건을 여러 단으로 쌓아 두고 하나씩 꺼내는 곳이면 규모와 상관없이 같은 문제가 생깁니다.</p>
       <div class="pm-photos">
         <figure>
           <img src="photos/container-yard.jpg" width="1600" height="1067" loading="lazy" decoding="async"
@@ -104,6 +105,11 @@
           <img src="photos/steel-stockyard.jpg" width="1600" height="1067" loading="lazy" decoding="async"
                alt="철강 적치장에 강재 코일이 여러 단으로 쌓여 있고 위에 천장 크레인이 지나가는 모습">
           <figcaption>철강 적치장. 코일과 강재를 쌓아 두는 곳에서도 같은 일이 생깁니다.</figcaption>
+        </figure>
+        <figure>
+          <img src="photos/warehouse.jpg" width="1600" height="1067" loading="lazy" decoding="async"
+               alt="실내 물류 창고에 종이 상자가 천장 가까이까지 여러 단으로 쌓여 있는 모습">
+          <figcaption>물류 창고. 규모가 작아도 쌓아 두고 꺼내는 곳이면 같은 문제가 생깁니다.</figcaption>
         </figure>
         <figure>
           <img src="photos/gantry-crane.jpg" width="1600" height="1067" loading="lazy" decoding="async"
