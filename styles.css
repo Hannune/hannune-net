@@ -482,3 +482,186 @@ a {
 @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* ── 그림 ───────────────────────────────── */
+
+/* 사진을 쓰지 않는다. 이 회사가 실제로 내놓는 것(서식이 살아 있는 문서,
+   쌓여 있는 컨테이너)을 선으로 그려서 보여 준다. 색은 위에 정의한 네 가지만
+   쓰고, 강조색은 한 화면에 한 군데에만 쓴다. */
+
+.hero-figure {
+    margin: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+.doc-pair {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hero-figure figcaption {
+    margin-top: var(--spacing-sm);
+    font-size: 0.9rem;
+    opacity: 0.72;
+    max-width: 56ch;
+}
+
+.dp-page {
+    fill: var(--color-white);
+    stroke: rgba(51, 58, 47, 0.16);
+    stroke-width: 1;
+}
+
+.dp-title { fill: rgba(51, 58, 47, 0.42); }
+.dp-line { fill: rgba(51, 58, 47, 0.13); }
+.dp-cell { fill: rgba(51, 58, 47, 0.2); }
+.dp-strong { fill: rgba(51, 58, 47, 0.45); }
+.dp-head { fill: rgba(122, 130, 112, 0.14); }
+
+.dp-grid,
+.dp-rule {
+    fill: none;
+    stroke: rgba(51, 58, 47, 0.28);
+    stroke-width: 1;
+}
+
+.dp-num {
+    fill: rgba(51, 58, 47, 0.5);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.dp-tag {
+    fill: var(--color-dark);
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* 같은 줄끼리 이어진다는 것을 보여 주는 가는 선 */
+.dp-link {
+    fill: none;
+    stroke: rgba(122, 130, 112, 0.5);
+    stroke-width: 1;
+    stroke-dasharray: 3 4;
+}
+
+.dp-link-sum { stroke: var(--color-accent); stroke-dasharray: none; }
+
+/* 강조는 여기 한 군데뿐이다: 합계 줄을 확인했다는 표시 */
+.dp-sum {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 1.5;
+}
+
+.dp-check {
+    fill: none;
+    stroke: var(--color-hover);
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* 서비스 카드 위의 띠 그림 */
+.offer-figure {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: var(--spacing-sm);
+}
+
+.of-page,
+.of-screen {
+    fill: var(--color-white);
+    stroke: rgba(51, 58, 47, 0.22);
+    stroke-width: 1;
+}
+
+.section-white .of-page,
+.section-white .of-screen { fill: var(--color-light); }
+
+.of-rule {
+    fill: none;
+    stroke: rgba(51, 58, 47, 0.3);
+    stroke-width: 1;
+}
+
+.of-frame { stroke: rgba(51, 58, 47, 0.42); }
+.of-base { stroke: rgba(51, 58, 47, 0.45); }
+
+.of-arrow {
+    fill: none;
+    stroke: rgba(51, 58, 47, 0.42);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.of-key { fill: rgba(51, 58, 47, 0.42); }
+.of-val { fill: rgba(51, 58, 47, 0.16); }
+.of-caret { fill: var(--color-accent); }
+
+.of-run rect,
+.of-stack rect,
+.of-box rect {
+    fill: rgba(122, 130, 112, 0.16);
+    stroke: rgba(51, 58, 47, 0.32);
+    stroke-width: 1;
+}
+
+/* 카드마다 색이 들어가는 자리는 하나다 */
+.of-fix {
+    fill: rgba(122, 130, 112, 0.42);
+    stroke: var(--color-hover);
+    stroke-width: 1;
+}
+
+.of-fix-mark {
+    stroke: var(--color-hover);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+}
+
+.of-tag {
+    fill: var(--color-hover);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.of-box-move {
+    fill: rgba(122, 130, 112, 0.42);
+    stroke: var(--color-hover);
+    stroke-width: 1;
+}
+
+.of-move {
+    fill: none;
+    stroke: var(--color-hover);
+    stroke-width: 1.4;
+    stroke-dasharray: 4 4;
+}
+
+.of-move-head {
+    fill: none;
+    stroke: var(--color-hover);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* 좁은 화면에서는 그림 전체가 줄어들어 글자만 읽기 어려워진다.
+   그림 속 글자는 그림 좌표계를 따르므로 여기서 키워 주면 비율이 맞는다. */
+@media (max-width: 680px) {
+    .hero-figure { margin-top: var(--spacing-md); }
+    .dp-tag { font-size: 20px; }
+    .dp-num { font-size: 17px; }
+    .of-tag { font-size: 15px; }
+}
+
+/* 비어 있는 칸: 옮겨 갈 자리를 점선으로만 표시한다 */
+.of-slot {
+    fill: none;
+    stroke: rgba(122, 130, 112, 0.7);
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+}
